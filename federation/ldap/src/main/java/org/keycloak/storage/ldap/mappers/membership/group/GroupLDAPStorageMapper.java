@@ -377,7 +377,7 @@ public class GroupLDAPStorageMapper extends AbstractLDAPStorageMapper implements
 
         // Query existing LDAP groups
         LDAPQuery ldapQuery = createGroupQuery(config.isPreserveGroupsInheritance());
-        List<LDAPObject> ldapGroups = ldapQuery.getResultList();
+        List<LDAPObject> ldapGroups = getAllLDAPGroups(config.isPreserveGroupsInheritance());
 
         // Convert them to Map<String, LDAPObject>
         Map<String, LDAPObject> ldapGroupsMap = new HashMap<>();
